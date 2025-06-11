@@ -28,7 +28,7 @@ while true; do
     echo "That is not an integer, guess again:"
   elif [[ $GUESS -eq $RANDOM_NUMBER ]]; then
     echo "You guessed it in $TRIES tries. The secret number was $RANDOM_NUMBER. Nice job!"
-    #$PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $TRIES)"
+    $PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $TRIES)"
     break
   elif [[ $GUESS -gt $RANDOM_NUMBER ]]; then
     echo "It's lower than that, guess again:"
